@@ -50,7 +50,7 @@ class BdManager
 
     public function findAll($table){
        // la resquet sql pour récupérer tous les enregistrements d'une table 
-        $sql = "SELECT * FROM $table  WHERE id = 1";
+        $sql = "SELECT * FROM $table ";
         // j'execute la requet non préparé
         $stmt = $this->requet($sql);
         // je recup les enregistrements en mode object et non en tableau assoc
