@@ -21,19 +21,19 @@ include_once ROOT . 'views/includes/header.php'; ?>
 
             <label for="name" class="label-control">Nom du tel</label>
 
-            <input type="text" value="<?php if (isset($name)) {
+            <input required type="text" value="<?php if (isset($name)) {
                                             echo $name;
                                         } ?>" name="name" id="name" class="form-control">
 
             <label for="ref" class="label-control">Nom de la ref</label>
 
-            <input type="text" value="<?php if (isset($ref)) {
+            <input required type="text" value="<?php if (isset($ref)) {
                                             echo $ref;
                                         } ?>" name="ref" id="ref" class="form-control">
 
             <label for="description" class="label-control">déscription</label>
 
-            <textarea class="form-control" name="description" id="description" cols="30" rows="10"><?php if (isset($description)) {
+            <textarea required class="form-control" name="description" id="description" cols="30" rows="10"><?php if (isset($description)) {
                                                                                                         echo $description;
                                                                                                     } ?></textarea>
 
@@ -62,13 +62,13 @@ include_once ROOT . 'views/includes/header.php'; ?>
 
             <label for="prix" class="label-control">Prix </label>
 
-            <input type="number" step="0.01" name="prix_unit" id="prix" class="form-control" value="<?php if (isset($prix_unit)) {
+            <input required type="number" step="0.01" name="prix_unit" id="prix" class="form-control" value="<?php if (isset($prix_unit)) {
                                                                                                         echo $prix_unit;
                                                                                                     } ?>">
 
             <label for="quantity" class="label-control">Quantité </label>
 
-            <input type="number" name="quantity" id="quantity" class="form-control" value="<?php if (isset($quantity)) {
+            <input required type="number" name="quantity" id="quantity" class="form-control" value="<?php if (isset($quantity)) {
                                                                                                 echo $quantity;
                                                                                             } ?>">
 

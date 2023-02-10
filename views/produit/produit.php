@@ -10,7 +10,7 @@ include_once ROOT . 'views/includes/header.php'; ?>
     <div class="container">
         <h4 class="text-center mx-2 mt-2">Liste des Produit</h4>
         <hr>
-        <a class="btn btn-primary m-3" href="<?= URL ?>src/Controller/ProduitController.php?param=addProduit">Ajouter une tva</a>
+        <a class="btn btn-primary m-3" href="<?= URL ?>src/Controller/ProduitController.php?param=addProduit">Ajouter une Produit</a>
         <table class="table border">
             <thead>
                 <tr class="bg-light">
