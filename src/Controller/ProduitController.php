@@ -23,16 +23,28 @@ switch ($param) {
         $produits = $produitRepo->findAll();
         include_once ROOT . 'views/produit/produit.php';
         break;
+        //________________________________________________________________
     case 'addProduit':
-        
         $marques = $marqRepo->findAll();
-        if(isset($_POST['marque_id'])){
+        if (isset($_POST['marque_id'])) {
             $curenMarque = $marqRepo->find($_POST['marque_id']);
         }
-      
         $tvas = $tvaRepo->findAll();
-
         if ($_POST) {
+
+            $file = $_FILES['image']['name'];
+            // si y'a eut un téléchargement de fichier
+            if ($file) {
+                $image = new SplFileInfo($file);
+                $new_name_image = uniqid() . '.' . $image->getExtension();
+                move_uploaded_file(
+                    $_FILES['image']['tmp_name'],
+                    ROOT . "public/images/" . $new_name_image
+                );
+            } else {
+                $new_name_image = "defaultImage.png";
+            }
+            $_POST['image'] = $new_name_image;
             $produitRepo->add($_POST);
             header("location: ProduitController.php?param=liste");
         }
